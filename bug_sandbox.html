@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title></title>
+	    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	</head>
+	<body>
+        <iframe style="height: 504px; width: 100%; overflow: hidden;" src="test_textarea.html"></iframe>
+        <script>            
+            var listener = function (){};
+            
+            //The bug happens when attaching any touch listener to a node containing the iframe or to any node inside the iframe containing the textarea
+            //For testing, a touch event is currently attached to a container div inside the iframe
+            //But the bug can be also reproduced by removing the listeners in the iframe and uncommenting one the listeners below
+
+            //document.body.addEventListener('touchstart', listener, false);
+            //document.body.addEventListener('touchend', listener, false);
+            //document.body.addEventListener('touchcancel', listener, false);
+        </script>
+	</body>
+</html>

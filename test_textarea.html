@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title></title>
+	    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	    <style type="text/css">
+	    	textarea {
+	    		font-family: "Helvetica", "sans-serif";
+	    		font-weight: bold;
+	    		font-size: 18px;
+                color: black;
+	    	}
+	    </style>
+	</head>
+	<body>
+        <div class="container">
+			<form>
+				<textarea rows="10" cols="24"></textarea>
+			</form>
+        </div>
+        <script>
+            var listener = function (){};
+            
+            //Any listener, even empty, attached to a node containing the textarea will result in a bug: text edition is impossible after moving the cursor to another part of the textarea
+            
+            document.querySelector('.container').addEventListener('touchstart', listener, false);
+            //document.querySelector('.container').addEventListener('touchend', listener, false);
+            //document.querySelector('.container').addEventListener('touchcancel', listener, false);
+        </script>
+	</body>
+</html>
